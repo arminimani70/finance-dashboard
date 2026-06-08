@@ -1,16 +1,20 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import "./App.css";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
+import Transactions from "./pages/Transactions";
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold text-center pt-10 text-blue-600">
-        Finance Dashboard
-      </h1>
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-gray-100">
+        <Navbar />
+        <main className="max-w-6x1 mx-auto px-6 py-8">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transactions />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
