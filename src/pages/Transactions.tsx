@@ -1,12 +1,3 @@
-function Transactions() {
-  return (
-    <div>
-      <h2 className="text-2xl font-bold text-gray-800">Transactions</h2>
-    </div>
-  );
-}
-
-export default Transactions;
 import { useState, useMemo } from "react";
 import FilterButtons from "../components/FilterButtons";
 import TransactionRow from "../components/TransactionRow";
@@ -39,9 +30,17 @@ function Transactions() {
             </tr>
           </thead>
           <tbody>
-            {filteredTransactions.map((t) => (
-              <TransactionRow key={t.id} transaction={t} />
-            ))}
+            {filteredTransactions.length === 0 ? (
+              <tr>
+                <td colSpan={4} className="py-8 text-center text-gray-400">
+                  No transactions found.
+                </td>
+              </tr>
+            ) : (
+              filteredTransactions.map((t) => (
+                <TransactionRow key={t.id} transaction={t} />
+              ))
+            )}
           </tbody>
         </table>
       </div>

@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# 💰 Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive personal finance dashboard built with React, TypeScript, and Tailwind CSS. Track income, expenses, and visualize monthly trends with interactive charts.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [your-vercel-link-here]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Dashboard Screenshot](./screenshot.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📊 Monthly income vs. expenses bar chart (Recharts)
+- 💳 Real-time summary cards (Total Income, Expenses, Balance)
+- 🔍 Filterable transactions table (All / Income / Expenses)
+- 📱 Fully responsive layout (mobile-first design)
+- 🛠️ Fully typed with TypeScript
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18** + **TypeScript**
+- **Vite** — build tool
+- **Tailwind CSS** — styling
+- **Recharts** — data visualization
+- **React Router** — client-side routing
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+\`\`\`bash
+git clone https://github.com/arminimani70/finance-dashboard.git
+cd finance-dashboard
+npm install
+npm run dev
+\`\`\`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Project Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+\`\`\`
+src/
+├── components/ # Reusable UI components
+├── pages/ # Page-level components (Dashboard, Transactions)
+├── data/ # Mock transaction data
+├── types/ # TypeScript interfaces & types
+└── utils/ # Calculation helper functions
+\`\`\`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## What I Learned
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project helped me practice:
+
+- Designing TypeScript interfaces before building components
+- Separating "smart" container components from "dumb" presentational ones
+- Managing state with `useState` and optimizing with `useMemo`
+- Building reusable, prop-driven components (controlled component pattern)
+- Data visualization with Recharts
+
+## Author
+
+**Armin Imani** — Frontend Developer  
+[LinkedIn](https://linkedin.com/in/arminimani70)
